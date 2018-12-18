@@ -5,7 +5,8 @@ import time
 import numpy as np
 import matplotlib.pyplot as plt
 
-from utils import cost, loss, sigmoid, relu
+from utils.losses import cost, loss
+from utils.activations import sigmoid, relu
 
 class Model:
     """Class implementing logistic regression.

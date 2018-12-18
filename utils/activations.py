@@ -1,4 +1,4 @@
-"""Module with utils for neural networks and logistic regression."""
+"""Module with unit activation functions."""
 
 import numpy as np
 
@@ -37,16 +37,3 @@ def d_relu(z):
 def softmax(z):
     z_exp = np.exp(z - np.max(z))  # shift to stabilize
     return z_exp / np.sum(z_exp, axis=0, keepdims=True)
-
-
-def loss(a, y):
-    """return cross-entropy loss of a and y."""
-    if y == 1:
-        return -np.log(a)
-    else:
-        return -np.log(1 - a)
-
-
-def cost(a, y):
-    """return cost, i.e. mean of loss over each sample."""
-    return np.mean(list(map(loss, a, y)))

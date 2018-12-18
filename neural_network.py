@@ -10,7 +10,7 @@ class Layer:
         self.W = np.random.randn(n_units, d_input)
         self.b = np.zeros((n_units, 1))
         try:
-            self.activation = getattr(utils, activation)
+            self.activation = getattr(utils.activations, activation)
         except AttributeError:
             raise AttributeError("Activation function doesn't exist.")
 
